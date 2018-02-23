@@ -1,3 +1,5 @@
+[Spring Boot Reference Guide中文翻译 -《Spring Boot参考指南》](https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/)
+
 # awesome list
 
 收集各种awesome。
