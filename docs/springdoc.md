@@ -6,3 +6,10 @@
 * [Spring Data JPA 参考指南 中文版](https://www.gitbook.com/book/ityouknow/spring-data-jpa-reference-documentation/details)
 * [Spring Framework 5.0.0.M3中文文档 --- Spring&Spring mvc文档](https://github.com/muyinchen/Spring-Framework-5.0.0.M3-CN/blob/master/SUMMARY.md)
 
+
+
+
+### 分布式配置中心
+
+[Apollo（阿波罗）是携程框架部门研发的分布式配置中心](https://github.com/ctripcorp/apollo)
+
