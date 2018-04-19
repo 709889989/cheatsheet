@@ -19,3 +19,10 @@
 
 [教程-这可能是最好的RxJava 2.x 教程(完结版)](https://www.jianshu.com/p/0cd258eecf60)
 
+
+
+### Java HTTP客户端库
+
+- [Retrofit - Retrofit 文档](https://square.github.io/retrofit/)
+- [Feign - Feign文档](https://github.com/OpenFeign/feign)  https://www.jianshu.com/p/3d597e9d2d67
+
