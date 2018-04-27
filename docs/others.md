@@ -31,7 +31,25 @@ awesome的源头在这里：[awesome](https://github.com/sindresorhus/awesome)�
 ## 书籍
 
 - [计算机编程类](https://github.com/justjavac/free-programming-books-zh_CN)  
+
 - [经典编程书籍大全](https://github.com/jobbole/awesome-programming-books)  
+
+  JAVA相关
+
+  - [Java 8简明教程](http://blog.didispace.com/books/java8-tutorial/)
+  - [Java编程思想](http://blog.didispace.com/books/think-in-java/)
+  - [Spring Boot参考指南](http://blog.didispace.com/books/spring-boot-reference/)
+  - [Spring 4.x参考文档](http://blog.didispace.com/books/spring-framework-4-reference/)
+  - [Spring MVC 4.x中文文档](http://blog.didispace.com/books/spring-mvc-4-tutorial/)
+
+  其他书籍
+
+  - [JS函数式编程指南](http://blog.didispace.com/books/mostly-adequate-guide-chinese/)
+  - [React入门教程](http://blog.didispace.com/books/react-tutorial/)
+  - [Elasticsearch权威指南](http://blog.didispace.com/books/elasticsearch-definitive-guide-cn/)
+  - [程序员的自我修养](http://blog.didispace.com/books/a-programmer-prepares/)
+  - [Gradle官方文档翻译](http://blog.didispace.com/books/GradleUserGuide/)
+  - [HTTP2讲解](http://blog.didispace.com/books/http2-explained-chinese/)
 
 
 ## 前端
