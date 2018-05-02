@@ -27,8 +27,7 @@
 
 - [Retrofit - Retrofit 文档](https://square.github.io/retrofit/)
 - [Feign - Feign文档](https://github.com/OpenFeign/feign)  https://www.jianshu.com/p/3d597e9d2d67
-
-
+- [Spring RestTemplate ](http://note.youdao.com/noteshare?id=187fe49e7985163cd4e0dbfda4977098&sub=308DBA1123B54F39A2B6A5BEE04736AF)
 
 
 
