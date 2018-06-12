@@ -21,7 +21,7 @@
 
   ​
 
-  ​
+  [Gradle User Guide 中文版](https://dongchuan.gitbooks.io/gradle-user-guide-/)
 
   ### 中后端前台
 
