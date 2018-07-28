@@ -5,7 +5,7 @@
 - [Spring Cloud](http://projects.spring.io/spring-cloud/)
 - [Spring boot](https://projects.spring.io/spring-boot/)
 - [Spring](https://projects.spring.io/spring-framework/)
-
+- [Spring Cloud 样例](https://github.com/spring-cloud-samples)
 第三方翻译文档
 
 * [Spring Boot Reference Guide中文翻译 -《Spring Boot参考指南》](https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/)
