@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="generator.properties" /> <!-- 额外配置文件路径 -->
+    <classPathEntry location="${jdbc.driverLocation}" />    <!--数据库驱动包路径 -->
+    <context id="OracleTables" targetRuntime="MyBatis3">
+        <commentGenerator>  <!--关闭注释 -->
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库连接信息 -->
+        <jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
+        </jdbcConnection>
+        <!--生成的model 包路径 -->
+        <javaModelGenerator targetPackage="${model.package}" targetProject="src/main/java">
+            <property name="enableSubPackages" value="ture" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!--生成xml mapper文件 路径 -->
+        <sqlMapGenerator targetPackage="${xml.package}" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="ture" />
+        </sqlMapGenerator>
+        <!-- 生成的Dao接口路径 -->
+        <javaClientGenerator targetPackage="${dao.package}" type="XMLMAPPER"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="ture" />
+        </javaClientGenerator>
+        <!-- <table schema="XXXX" tableName=" " 配置schema防止mapper xml 生成重复多份-->
+        <!--对应数据库表名 >-->
+        <table tableName="t_loan_mock_apply" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="false"
+               enableSelectByExample="true" selectByExampleQueryId="false" domainObjectName="Apply">
+        </table>
+    </context>
+</generatorConfiguration>
