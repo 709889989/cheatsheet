@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--指定数据库的jdbc驱动jar包的位置 -->
+    <classPathEntry location="D:/Local_Repository/ivy-cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.38.jar" />
+
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+	
+	<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.SliceTablePlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.SumSelectivePlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.UpdateSqlTextOfUpdateSelectivePlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.WhereSqlTextPlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.OptimisticLockAutoIncreasePlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.BatchInsertPlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.PaginationPlugin"/>
+
+        <!--去除注释-->
+        <commentGenerator type="DEFAULT">
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库连接-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.47.224:3310/mamacct001"
+                        userId="root"
+                        password="4bldxenlhf5qkfbk">
+        </jdbcConnection>
+        <!--生成实体类 指定包名-->
+        <javaModelGenerator targetPackage="com.bill99.finder.settle.common.infrastructure.persistence.entry"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成SQLMAP文件-->
+        <sqlMapGenerator targetPackage="com.bill99.finder.settle.common.infrastructure.persistence" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <!--生成Mapper文件 type属性和父节点的属性targetRuntime="MyBatis3"对应-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bill99.finder.settle.common.infrastructure.persistence"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+
+
+        <table tableName="T_FINDER_SETTLE_ORDER" domainObjectName="OrderEntry" >
+        	<property name="optimisticLockColumn" value="version"/>
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        
+        <table tableName="T_FINDER_SETTLE_SUB_ORDER" domainObjectName="SubOrderEntry">
+        	<property name="optimisticLockColumn" value="version"/>
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        
+         <table tableName="T_FINDER_SETTLE_ITEM" domainObjectName="SettleItemEntry">
+         	<property name="optimisticLockColumn" value="version"/>
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        
+         <table tableName="T_FINDER_SETTLE_ACCOUNT_LOG" domainObjectName="AccountLogEntry">
+         	<property name="optimisticLockColumn" value="version"/>
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
