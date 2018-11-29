@@ -1,0 +1,57 @@
+group 'com.ming'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+
+def objenesisVersion = "2.6"
+
+configurations {
+    jarjar
+    cglib
+    objenesis
+}
+// 打包任务定义
+task objenesisRepackJar(type: Jar) { repackJar ->
+    // 重打包后jar包名
+    repackJar.baseName = "spring-objenesis-repack"
+    repackJar.version = objenesisVersion
+
+    doLast() {
+        project.ant {
+            taskdef name: "jarjar", classname: "com.tonicsystems.jarjar.JarJarTask",
+                    classpath: configurations.jarjar.asPath
+            jarjar(destfile: repackJar.archivePath) {
+                configurations.objenesis.each { originalJar ->
+                    zipfileset(src: originalJar)
+                }
+                // Repackage org.objenesis => org.springframework.objenesis
+                rule(pattern: "org.objenesis.**", result: "org.springframework.objenesis.@1")
+            }
+        }
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    objenesis("org.objenesis:objenesis:${objenesisVersion}@jar")
+    jarjar("com.googlecode.jarjar:jarjar:1.3")
+
+
+    compile(files(objenesisRepackJar))
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+jar {
+    // Inline repackaged cglib classes directly into spring-core jar
+
+    dependsOn objenesisRepackJar
+    from(zipTree(objenesisRepackJar.archivePath)) {
+        include "org/springframework/objenesis/**"
+    }
+}
+
