@@ -12,6 +12,8 @@ import java.util.Map;
 
 /**
  * @author xu.mingming
+ * JWt token认证方案
+ *
  * iss (issuer)：签发人
  * exp (expiration time)：过期时间
  * sub (subject)：主题
@@ -19,11 +21,14 @@ import java.util.Map;
  * nbf (Not Before)：生效时间
  * iat (Issued At)：签发时间
  * jti (JWT ID)：编号
+ *
+ * 实践：https://juejin.im/post/5c1200ece51d4560f0435795
  */
 public class JwtTest {
     public static void main(String[] args) {
         String token = createToken();
         System.out.println(token);
+//        String token = "eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCIsImhlbGxvIjoid29ybGQifQ.eyJ0ZXN0IjoidGVzdCIsImlzcyI6IumigeWPkeiAhSIsImhlbGxvIjoid29ybGQiLCJpYXQiOjE1NDM1NzA5NjZ9.htrJijN_QC9RZ6xS-FtiRBouzJE7RnRetHtaE6smYV92trMuwbJoPn2IBlwzv5Xf";
         verifyToken(token);
     }
 
