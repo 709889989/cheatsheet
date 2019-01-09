@@ -12,15 +12,14 @@ import org.junit.runner.notification.Failure;
  * Hello world!
  *
  */
-public class App 
-{
+public class App {
     public static void main( String[] args )
     {
         String data = "{\"appId\":\"121\",\"memberCode\":\"10012189149\",\"deviceId\":\"EC170542-6711-4A51-A4B4-DC6782B95E4B\"}";
 //        Result result = JUnitCore.runClasses(ServiceTest.class);
 //        Result result = JUnitCore.runClasses(JunitAnnotation.class);
-//        Result result = JUnitCore.runClasses(TestSuite.class);
-        Result result = JUnitCore.runClasses(CheckerTest.class);
+        Result result = JUnitCore.runClasses(TestSuite.class);
+//        Result result = JUnitCore.runClasses(CheckerTest.class);
         for (Failure failure : result.getFailures()) {
             System.out.println(failure.toString());
         }
