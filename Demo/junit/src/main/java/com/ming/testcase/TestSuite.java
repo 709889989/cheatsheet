@@ -1,17 +1,16 @@
-package com.ming.testsuite;
+package com.ming.testcase;
 
 
-import com.ming.testcase.JunitAnnotation;
-import com.ming.testcase.ServiceTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * 测试套件
+ * 套件测试
+ * 套件测试，就是将多个单元测试用例一起执行
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        JunitAnnotation.class,
+        JunitAnnotationTest.class,
         ServiceTest.class
 })
 public class TestSuite {
