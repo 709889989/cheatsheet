@@ -16,23 +16,17 @@
 * [Spring Data JPA 参考指南 中文版](https://www.gitbook.com/book/ityouknow/spring-data-jpa-reference-documentation/details)
 * [Spring Framework 5.0.0.M3中文文档 --- Spring&Spring mvc文档](https://github.com/muyinchen/Spring-Framework-5.0.0.M3-CN/blob/master/SUMMARY.md)
 
-
 ### RxJava文档
 
 [rxjava 2.1.12 API 文档](http://reactivex.io/RxJava/2.x/javadoc/)
 
 [教程-这可能是最好的RxJava 2.x 教程(完结版)](https://www.jianshu.com/p/0cd258eecf60)
 
-
-
 ### Java HTTP客户端库
 
 - [Retrofit - Retrofit 文档](https://square.github.io/retrofit/)
 - [Feign - Feign文档](https://github.com/OpenFeign/feign)  https://www.jianshu.com/p/3d597e9d2d67
 - [Spring RestTemplate ](http://note.youdao.com/noteshare?id=187fe49e7985163cd4e0dbfda4977098&sub=308DBA1123B54F39A2B6A5BEE04736AF)
-
-
-
 
 ### 分布式配置中心
 
@@ -47,3 +41,5 @@ Twitter 雪花算法生成ID
 [百度UidGenerator](https://github.com/baidu/uid-generator/blob/master/README.zh_cn.md)
 
 twitter雪花算法：<https://github.com/twitter/snowflake/releases/tag/snowflake-2010>
+
+[滴滴TinyId]([https://github.com/didi/tinyid](https://github.com/didi/tinyid)
