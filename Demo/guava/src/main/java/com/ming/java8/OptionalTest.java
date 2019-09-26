@@ -1,4 +1,4 @@
-package com.ming;
+package com.ming.java8;
 
 
 import com.google.common.base.Optional;
