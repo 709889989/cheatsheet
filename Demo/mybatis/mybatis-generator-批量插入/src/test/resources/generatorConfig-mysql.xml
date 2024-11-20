@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MysqlTables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.BatchInsertPlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.LombokAnnotationPlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.OptimisticLockAutoIncreasePlugin"/>
+
+        <!--去除注释-->
+        <commentGenerator type="DEFAULT">
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.223.11:3306/tms_coop"
+                        userId="tms_plan"
+                        password="howbuy123">
+            <property name="nullCatalogMeansCurrent" value="true" />
+        </jdbcConnection>
+
+        <!--生成实体类 指定包名-->
+        <javaModelGenerator targetPackage="com.howbuy.tms.coop.promotion.dao.po"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成SQLMAP文件-->
+        <sqlMapGenerator targetPackage="com.howbuy.tms.coop.promotion.dao.mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <!--生成Mapper文件 type属性和父节点的属性targetRuntime="MyBatis3"对应-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.howbuy.tms.coop.promotion.dao.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+
+<!--        <table schema="tms_coop" tableName="t_coop_merchant"-->
+<!--               domainObjectName="MerchantPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_source_data"-->
+<!--               domainObjectName="SourceDataPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_source_data_his"-->
+<!--               domainObjectName="SourceDataHisPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_source_file"-->
+<!--               domainObjectName="SourceFilePo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_promotion"-->
+<!--               domainObjectName="PromotionPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_promotion_item"-->
+<!--               domainObjectName="PromotionItemPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_promotion_rule"-->
+<!--               domainObjectName="PromotionRulePo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_promotion_materiel"-->
+<!--               domainObjectName="PromotionMaterielPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_process"-->
+<!--               domainObjectName="ProcessPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_process_stock"-->
+<!--               domainObjectName="ProcessStockPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_process_result"-->
+<!--               domainObjectName="ProcessResultPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_process_sign_up"-->
+<!--               domainObjectName="ProcessSignUpPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_game"-->
+<!--               domainObjectName="GamePo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_game_record"-->
+<!--               domainObjectName="GameRecordPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_game_ticket"-->
+<!--               domainObjectName="GameTicketPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_game_coin"-->
+<!--               domainObjectName="GameCoinPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_game_coin_detail"-->
+<!--               domainObjectName="GameCoinDetailPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_supplier_back"-->
+<!--               domainObjectName="SupplierBackPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_login"-->
+<!--               domainObjectName="ConfigLoginPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--               <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_module"-->
+<!--               domainObjectName="ConfigModulePo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_module_detail"-->
+<!--               domainObjectName="ConfigModuleDetailPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_url_library"-->
+<!--               domainObjectName="ConfigUrlLibraryPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_color"-->
+<!--               domainObjectName="ConfigColorPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_bottom_menu"-->
+<!--               domainObjectName="ConfigBottomMenuPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_authorization"-->
+<!--               domainObjectName="AuthorizationPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_merchant_config"-->
+<!--               domainObjectName="MerchantConfigPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="common_cache"-->
+<!--               domainObjectName="CommonCachePo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_adviser"-->
+<!--               domainObjectName="ConfigAdviserPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_adviser_principal"-->
+<!--               domainObjectName="ConfigAdviserPrincipalPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_adviser_style"-->
+<!--               domainObjectName="ConfigAdviserStylePo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_topic_sign_up"-->
+<!--               domainObjectName="TopicSignUpPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_audit_historic_version"-->
+<!--               domainObjectName="AuditHistoricVersionPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_auth_bind_wechat"-->
+<!--               domainObjectName="AuthBindWechatPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_topic_pages"-->
+<!--               domainObjectName="ConfigTopicPagesPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <property name="optimisticLockColumn" value="version"/>-->
+<!--        </table>-->
+        <!--<table schema="tms_coop" tableName="t_coop_config_tool_pages"
+               domainObjectName="ConfigToolPagesPo"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table schema="tms_coop" tableName="t_coop_config_tool_pages_module"
+               domainObjectName="ConfigToolPagesModulePo"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>-->
+<!--                <table schema="tms_coop" tableName="t_coop_config_portfolio"-->
+<!--                       domainObjectName="ConfigPortfolioPo"-->
+<!--                       enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--                       enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--                </table>-->
+<!--                <table schema="tms_coop" tableName="t_coop_config_portfolio_label"-->
+<!--                       domainObjectName="ConfigPortfolioLabelPo"-->
+<!--                       enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--                       enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--                </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_channel_cms"-->
+<!--               domainObjectName="ConfigChannelCmsPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+
+<!--            <table schema="tms_coop" tableName="t_coop_config_scale"-->
+<!--                   domainObjectName="ConfigScalePo"-->
+<!--                   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--                   enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_adviser_product_cms"-->
+<!--               domainObjectName="ConfigAdviserProductCmsPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+
+<!--            <table schema="tms_coop" tableName="t_coop_config_scale"-->
+<!--                   domainObjectName="ConfigScalePo"-->
+<!--                   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--                   enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            </table>-->
+<!--        <table schema="tms_coop" tableName="t_coop_config_login_pages"-->
+<!--               domainObjectName="ConfigLoginPagesPo"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--        </table>-->
+        <table schema="tms_coop" tableName="t_coop_subscribe_info"
+               domainObjectName="CoopSubscribeInfoPo"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+<!--            <table schema="tms_coop" tableName="t_coop_config_scale"-->
+<!--                   domainObjectName="ConfigScalePo"-->
+<!--                   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--                   enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            </table>-->
+    </context>
+</generatorConfiguration>

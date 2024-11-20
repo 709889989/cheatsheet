@@ -5,11 +5,11 @@
 
 <generatorConfiguration>
     <!--指定数据库的jdbc驱动jar包的位置 -->
-    <classPathEntry location="D:/Local_Repository/ivy-cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.38.jar" />
+<!--    <classPathEntry location="D:/Local_Repository/ivy-cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.38.jar" />-->
 
-	<context id="MysqlTables" targetRuntime="MyBatis3">
+	    <context id="MysqlTables" targetRuntime="MyBatis3">
 	
-	<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+	    <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
         <plugin type="com.github.oceanc.mybatis3.generator.plugin.SliceTablePlugin"/>
         <plugin type="com.github.oceanc.mybatis3.generator.plugin.SumSelectivePlugin"/>
@@ -18,6 +18,7 @@
         <plugin type="com.github.oceanc.mybatis3.generator.plugin.OptimisticLockAutoIncreasePlugin"/>
         <plugin type="com.github.oceanc.mybatis3.generator.plugin.BatchInsertPlugin"/>
         <plugin type="com.github.oceanc.mybatis3.generator.plugin.PaginationPlugin"/>
+        <plugin type="com.github.oceanc.mybatis3.generator.plugin.LombokAnnotationPlugin"/>
 
         <!--去除注释-->
         <commentGenerator type="DEFAULT">
